@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>さほクイズ</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: linear-gradient(135deg, #ffe4ec, #fff6d9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .quiz {
+      background: white;
+      width: 420px;
+      max-width: 85%;
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff5c8a;
+    }
+
+    h2 {
+      margin: 30px 0;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: #f2f2f2;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ffe1ea;
+    }
+
+    #result {
+      margin-top: 25px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz">
+
+    <h1>🎤 さほクイズ 🎤</h1>
+
+    <h2>さほの得意な歌はなんでしょう？</h2>
+
+    <button onclick="answer(false)">マリーゴールド</button>
+    <button onclick="answer(true)">朝ごはんの歌</button>
+    <button onclick="answer(false)">Pretender</button>
+    <button onclick="answer(false)">恋するフォーチュンクッキー</button>
+
+    <div id="result"></div>
+
+  </div>
+
+  <script>
+    function answer(correct) {
+
+      const result = document.getElementById("result");
+
+      if (correct) {
+        result.innerHTML = "🎉 正解！！さすが！！";
+        result.style.color = "#ff4778";
+      } else {
+        result.innerHTML = "❌ 残念！違います！";
+        result.style.color = "#555";
+      }
+
+    }
+  </script>
+
+</body>
+</html>
